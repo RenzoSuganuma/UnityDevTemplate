@@ -1,0 +1,31 @@
+using System;
+using Cysharp.Threading.Tasks;
+using ImTipsyDude.InstantECS;
+using R3;
+
+public class SysEntryWindow : IECSSystem
+{
+    public void EnterInGame()
+    {
+        Entity.World.UnLoadSceneAsync("Entry", o => { });
+    }
+
+    public override void OnStart()
+    {
+    }
+
+    public override void OnUpdate()
+    {
+        var condition = Entity.World.CurrentScene.AsyncOperation.progress >= 0.9f;
+        var e = (Entity as EnEntryWindow);
+        e.EnterInGameButton.interactable = condition;
+    }
+
+    public override void OnFixedUpdate()
+    {
+    }
+
+    public override void OnTerminate()
+    {
+    }
+}
