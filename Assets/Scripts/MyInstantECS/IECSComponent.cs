@@ -6,16 +6,26 @@ namespace ImTipsyDude.InstantECS
     /// NOTE:
     /// コンポーネントにはデータのみ集めておく。依存関係は集めない。
     /// </summary>
-    
     [DefaultExecutionOrder((int)ExecutionOrder.EntityOrComponent)]
-    public abstract class IECSComponent : MonoBehaviour
+    public class IECSComponent : MonoBehaviour
     {
         public int ID => GetInstanceID();
 
-        public abstract void OnStart();
-        public abstract void OnUpdate();
-        public abstract void OnFixedUpdate();
-        public abstract void OnTerminate();
+        public virtual void OnStart()
+        {
+        }
+
+        public virtual void OnUpdate()
+        {
+        }
+
+        public virtual void OnFixedUpdate()
+        {
+        }
+
+        public virtual void OnTerminate()
+        {
+        }
 
         public IECSEntity Entity => gameObject.GetComponent<IECSEntity>();
 

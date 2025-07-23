@@ -15,10 +15,7 @@ public class SysEntryWindow : IECSSystem
 
     public override void OnStart()
     {
-        GetEntity<EnEntryWindow>()
-            .World.CurrentScene
-            .PullComponent(EnInstanceIdPool.Instance.Map[nameof(CmpEntryWindow)], out var temp);
-        var c = temp as CmpEntryWindow;
+        var c = GetComponent<CmpEntryWindow>();
         if (c == null) return;
         foreach (var t in c.Texts)
         {
