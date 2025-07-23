@@ -5,12 +5,13 @@ public class SysNotification : IECSSystem
 {
     public override void OnStart()
     {
+        var entity = GetEntity<EnNotification>();
         var c = GetComponent<CmpNotification>();
-        c.Text.text = $"{c.Title}\n{c.Content}";
-        c.Transform.position = c.Start.position;
+        entity.Text.text = $"{c.Title}\n{c.Content}";
+        entity.Transform.position = entity.Start.position;
         DOTween.Sequence()
-            .Append(c.Transform.DOMove(c.End.position, 1f))
-            .Append(c.Group.DOFade(0f, 1f))
+            .Append(entity.Transform.DOMove(entity.End.position, 1f))
+            .Append(entity.Group.DOFade(0f, 1f))
             .Play();
     }
 

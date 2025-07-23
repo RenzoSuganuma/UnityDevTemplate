@@ -327,11 +327,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: title
   Content: content
-  Text: {fileID: 2961376946429066826}
-  Transform: {fileID: 6296036597280006378}
-  Start: {fileID: 1969604433146429637}
-  End: {fileID: 4297703714155876635}
-  Group: {fileID: 3485964769080234486}
 --- !u!114 &9175062694504028123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,6 +339,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9756be3a8b1145be8c266a84826e2ac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Text: {fileID: 2961376946429066826}
+  Transform: {fileID: 6296036597280006378}
+  Start: {fileID: 1969604433146429637}
+  End: {fileID: 4297703714155876635}
+  Group: {fileID: 3485964769080234486}
 --- !u!114 &8387073963028788455
 MonoBehaviour:
   m_ObjectHideFlags: 0

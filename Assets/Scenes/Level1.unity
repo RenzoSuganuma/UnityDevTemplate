@@ -547,6 +547,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BannerNotification
       objectReference: {fileID: 0}
+    - target: {fileID: 6839799046844541316, guid: 7d18e1b73f5c34388845a91dd1759d1f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

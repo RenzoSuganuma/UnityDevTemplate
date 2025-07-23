@@ -132,8 +132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b40e1b6bba6d45f8abb1537f59ed2598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enterInGameButton: {fileID: 9036734648531110728}
-  _exitInGameButton: {fileID: 3064752779414423623}
+  EnterInGameButton: {fileID: 9036734648531110728}
+  ExitInGameButton: {fileID: 3064752779414423623}
 --- !u!114 &3273522734238201096
 MonoBehaviour:
   m_ObjectHideFlags: 0
