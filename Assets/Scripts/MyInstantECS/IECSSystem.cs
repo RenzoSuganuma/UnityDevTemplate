@@ -8,6 +8,7 @@ namespace ImTipsyDude.InstantECS
     /// システムにはデータに基づいた機能を集める（実装する）
     /// </summary>
     [DefaultExecutionOrder((int)ExecutionOrder.System)]
+    [RequireComponent(typeof(IECSEntity))]
     public abstract class IECSSystem : MonoBehaviour
     {
         private IECSEntity _currentEntity;
@@ -17,9 +18,11 @@ namespace ImTipsyDude.InstantECS
         public abstract void OnStart();
         public abstract void OnUpdate();
         public abstract void OnFixedUpdate();
-        public abstract void OnTerminate();
+        public abstract void OnTerminate(); // OnDestroy
 
         public IECSEntity Entity => _currentEntity;
+
+        public T GetEntity<T>() where T : IECSEntity => _currentEntity as T;
 
         private void Start()
         {

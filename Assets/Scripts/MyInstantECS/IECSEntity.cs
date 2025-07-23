@@ -7,7 +7,6 @@ namespace ImTipsyDude.InstantECS
     /// NOTE:
     /// エンティティには依存関係を集める。SerializedFeildの宣言してよい
     /// </summary>
-    
     [DefaultExecutionOrder((int)ExecutionOrder.EntityOrComponent)]
     public class IECSEntity : MonoBehaviour
     {

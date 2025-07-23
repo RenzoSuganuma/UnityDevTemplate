@@ -16,8 +16,8 @@ public class SysEntryWindow : IECSSystem
 
     public override void OnUpdate()
     {
-        var condition = Entity.World.CurrentScene.AsyncOperation.progress >= 0.9f;
-        var e = (Entity as EnEntryWindow);
+        var e = GetEntity<EnEntryWindow>();
+        var condition = e.World.CurrentScene.AsyncOperation.progress >= 0.9f;
         e.EnterInGameButton.interactable = condition;
     }
 

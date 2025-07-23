@@ -6,22 +6,19 @@ namespace ImTipsyDude.Scene
     {
         public override void OnStart()
         {
-            throw new System.NotImplementedException();
+            IECSWorld.Instance.StartLoadNextSceneAsync("Entry");
         }
 
         public override void OnUpdate()
         {
-            throw new System.NotImplementedException();
         }
 
         public override void OnFixedUpdate()
         {
-            throw new System.NotImplementedException();
         }
 
         public override void OnTerminate()
         {
-            throw new System.NotImplementedException();
         }
     }
 }
