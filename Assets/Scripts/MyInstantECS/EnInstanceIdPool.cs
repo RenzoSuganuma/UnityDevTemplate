@@ -6,7 +6,7 @@ namespace ImTipsyDude.Helper
 {
     public class EnInstanceIdPool : IECSEntity
     {
-        public static EnInstanceIdPool Instance;
+        public static EnInstanceIdPool Instance {get; private set; }
         
         public Dictionary<string, int> Map = new();
 

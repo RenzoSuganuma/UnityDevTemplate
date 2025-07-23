@@ -7,7 +7,7 @@ namespace ImTipsyDude.Helper
 {
     public class EnDependencyPool : IECSEntity
     {
-        public static EnDependencyPool Instance;
+        public static EnDependencyPool Instance { get; private set; }
         public TMP_Asset FontAsset;
 
         private void Start()

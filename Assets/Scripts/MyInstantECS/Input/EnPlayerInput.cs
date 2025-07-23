@@ -4,6 +4,14 @@ using UnityEngine.InputSystem;
 
 public class EnPlayerInput : MonoBehaviour, InputSystemActions.IPlayerActions
 {
+    public static EnPlayerInput Instance { get; private set; }
+
+    #region InputValues
+
+    public Vector2 MoveInput { get; private set; }
+
+    #endregion
+
     private InputSystemActions _input;
 
     private void Awake()
@@ -11,6 +19,14 @@ public class EnPlayerInput : MonoBehaviour, InputSystemActions.IPlayerActions
         _input = new();
         _input.Enable();
         _input.Player.AddCallbacks(this);
+    }
+
+    private void Start()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
     }
 
     private void OnDisable()
@@ -27,6 +43,10 @@ public class EnPlayerInput : MonoBehaviour, InputSystemActions.IPlayerActions
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        if (context.performed)
+        {
+            MoveInput = context.ReadValue<Vector2>();
+        }
     }
 
     public void OnLook(InputAction.CallbackContext context)
