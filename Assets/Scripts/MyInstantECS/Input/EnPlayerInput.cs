@@ -1,4 +1,5 @@
 using System;
+using R3;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +10,12 @@ public class EnPlayerInput : MonoBehaviour, InputSystemActions.IPlayerActions
     #region InputValues
 
     public Vector2 MoveInput { get; private set; }
+    public Vector2 LookInput { get; private set; }
+    public Subject<Unit> OnAttackFired { get; private set; } = new();
+    public Subject<Unit> OnInteractFired { get; private set; } = new();
+    public Subject<Unit> OnCrouchFired { get; private set; } = new();
+    public Subject<Unit> OnJumpFired { get; private set; } = new();
+    public Subject<Unit> OnSprintFired { get; private set; } = new();
 
     #endregion
 
@@ -43,7 +50,7 @@ public class EnPlayerInput : MonoBehaviour, InputSystemActions.IPlayerActions
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.action.name is "Move")
         {
             MoveInput = context.ReadValue<Vector2>();
         }
@@ -51,22 +58,42 @@ public class EnPlayerInput : MonoBehaviour, InputSystemActions.IPlayerActions
 
     public void OnLook(InputAction.CallbackContext context)
     {
+        if (context.action.name is "Look")
+        {
+            LookInput = context.ReadValue<Vector2>();
+        }
     }
 
     public void OnAttack(InputAction.CallbackContext context)
     {
+        if (context.action.name is "Attack" && context.performed)
+        {
+            OnAttackFired.OnNext(Unit.Default);
+        }
     }
 
     public void OnInteract(InputAction.CallbackContext context)
     {
+        if (context.action.name is "Interact" && context.performed)
+        {
+            OnInteractFired.OnNext(Unit.Default);
+        }
     }
 
     public void OnCrouch(InputAction.CallbackContext context)
     {
+        if (context.action.name is "Crouch" && context.performed)
+        {
+            OnCrouchFired.OnNext(Unit.Default);
+        }
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
+        if (context.action.name is "Jump" && context.performed)
+        {
+            OnJumpFired.OnNext(Unit.Default);
+        }
     }
 
     public void OnPrevious(InputAction.CallbackContext context)
@@ -79,5 +106,9 @@ public class EnPlayerInput : MonoBehaviour, InputSystemActions.IPlayerActions
 
     public void OnSprint(InputAction.CallbackContext context)
     {
+        if (context.action.name is "Sprint" && context.performed)
+        {
+            OnSprintFired.OnNext(Unit.Default);
+        }
     }
 }

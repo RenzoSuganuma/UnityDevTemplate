@@ -10,6 +10,10 @@ namespace ImTipsyDude.InstantECS
 {
     public sealed class IECSWorld : MonoBehaviour
     {
+        [SerializeField] GameDimension _gameDimension;
+
+        public GameDimension GameDimension => _gameDimension;
+
         public static IECSWorld Instance { get; private set; }
         public SceneEntity CurrentScene { get; private set; }
 
