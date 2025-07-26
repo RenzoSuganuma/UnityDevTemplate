@@ -2,6 +2,7 @@ using System;
 using Cysharp.Threading.Tasks;
 using ImTipsyDude.Scene;
 using R3;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,21 +28,28 @@ namespace ImTipsyDude.InstantECS
             CurrentScene = scene;
         }
 
-        public void StartLoadNextSceneAsync(string nameNext)
+        public void StartLoadNextScene(string nameNext)
         {
             var o = SceneManager.LoadSceneAsync(nameNext, LoadSceneMode.Additive);
             o.allowSceneActivation = false;
             GetScene().AsyncOperation = o;
         }
 
-        public void UnLoadSceneAsync(string name , Action<AsyncOperation> callback)
+        public void UnLoadScene(string name, Action<AsyncOperation> callback)
         {
             var o = SceneManager.UnloadSceneAsync(name);
             GetScene().AsyncOperation.allowSceneActivation = true;
-            o.completed += o =>
+            o.completed += o => { callback(o); };
+        }
+
+        public void QuitGame()
+        {
+            Application.Quit();
+
+            if (EditorApplication.isPlaying)
             {
-                callback(o);
-            };
+                EditorApplication.isPlaying = false;
+            }
         }
 
         public void CreateEntity(out GameObject newEntity, GameObject prefab = null)

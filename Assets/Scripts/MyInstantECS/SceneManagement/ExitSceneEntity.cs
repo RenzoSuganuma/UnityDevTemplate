@@ -6,7 +6,7 @@ namespace ImTipsyDude.Scene
     {
         public override void OnStart()
         {
-            IECSWorld.Instance.StartLoadNextSceneAsync("Entry");
+            IECSWorld.Instance.StartLoadNextScene("Entry");
         }
 
         public override void OnUpdate()

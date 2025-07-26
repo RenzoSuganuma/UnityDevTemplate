@@ -10,7 +10,12 @@ public class SysEntryWindow : IECSSystem
 {
     public void EnterInGame()
     {
-        Entity.World.UnLoadSceneAsync("Entry", o => { });
+        Entity.World.UnLoadScene("Entry", o => { });
+    }
+
+    public void QuitGame()
+    {
+        Entity.World.QuitGame();
     }
 
     public override void OnStart()
@@ -21,6 +26,10 @@ public class SysEntryWindow : IECSSystem
         {
             t.font = EnDependencyPool.Instance.FontAsset as TMP_FontAsset;
         }
+
+        var entity = GetEntity<EnEntryWindow>();
+        entity.EnterInGameButton.GetComponentInChildren<TMP_Text>().text = "ENTRY GAME";
+        entity.ExitInGameButton.GetComponentInChildren<TMP_Text>().text = "QUIT GAME";
     }
 
     public override void OnUpdate()
