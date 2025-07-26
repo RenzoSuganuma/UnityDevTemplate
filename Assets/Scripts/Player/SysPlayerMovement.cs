@@ -42,7 +42,7 @@ namespace ImTipsyDude.Player
         private void PlayerMove2D()
         {
             var horInput = _playerInput.MoveInput.x;
-            var velocity = horInput * Vector3.right ;
+            var velocity = horInput * Vector3.right;
             transform.forward = velocity.normalized;
             transform.position += velocity * Time.deltaTime;
         }
