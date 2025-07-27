@@ -3,9 +3,9 @@ using R3;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class EnPlayerInput : MonoBehaviour, InputSystemActions.IPlayerActions
+public class TipsyPlayerInput : MonoBehaviour, InputSystemActions.IPlayerActions
 {
-    public static EnPlayerInput Instance { get; private set; }
+    public static TipsyPlayerInput Instance { get; private set; }
 
     #region InputValues
 

@@ -8,7 +8,7 @@ namespace ImTipsyDude.Player
     public class SysPlayerMovement : IECSSystem
     {
         private Rigidbody _rigidbody;
-        private EnPlayerInput _playerInput;
+        private TipsyPlayerInput _tipsyPlayerInput;
         private CmpPlayer _cmpPlayer;
 
         private void OnFired()
@@ -41,7 +41,7 @@ namespace ImTipsyDude.Player
 
         private void PlayerMove2D()
         {
-            var horInput = _playerInput.MoveInput.x;
+            var horInput = _tipsyPlayerInput.MoveInput.x;
             var velocity = horInput * Vector3.right;
             transform.forward = velocity.normalized;
             transform.position += velocity * Time.deltaTime;
@@ -62,12 +62,12 @@ namespace ImTipsyDude.Player
 
             _cmpPlayer = GetComponent<CmpPlayer>();
 
-            _playerInput = EnPlayerInput.Instance;
-            _playerInput.OnAttackFired.Subscribe(_ => OnFired()).AddTo(destroyCancellationToken);
-            _playerInput.OnInteractFired.Subscribe(_ => OnInteract()).AddTo(destroyCancellationToken);
-            _playerInput.OnCrouchFired.Subscribe(_ => OnCrouch()).AddTo(destroyCancellationToken);
-            _playerInput.OnJumpFired.Subscribe(_ => OnJump()).AddTo(destroyCancellationToken);
-            _playerInput.OnSprintFired.Subscribe(_ => OnSprint()).AddTo(destroyCancellationToken);
+            _tipsyPlayerInput = TipsyPlayerInput.Instance;
+            _tipsyPlayerInput.OnAttackFired.Subscribe(_ => OnFired()).AddTo(destroyCancellationToken);
+            _tipsyPlayerInput.OnInteractFired.Subscribe(_ => OnInteract()).AddTo(destroyCancellationToken);
+            _tipsyPlayerInput.OnCrouchFired.Subscribe(_ => OnCrouch()).AddTo(destroyCancellationToken);
+            _tipsyPlayerInput.OnJumpFired.Subscribe(_ => OnJump()).AddTo(destroyCancellationToken);
+            _tipsyPlayerInput.OnSprintFired.Subscribe(_ => OnSprint()).AddTo(destroyCancellationToken);
 
             Init();
         }
