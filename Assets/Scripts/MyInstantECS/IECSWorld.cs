@@ -1,5 +1,6 @@
 using System;
 using Cysharp.Threading.Tasks;
+using ImTipsyDude.Player;
 using ImTipsyDude.Scene;
 using R3;
 using UnityEditor;
@@ -25,6 +26,10 @@ namespace ImTipsyDude.InstantECS
             {
                 Instance = this;
             }
+
+            PlayerTime.TimeScale = 1;
+            PlayerTime.DeltaTime = Time.deltaTime;
+            PlayerTime.UnscaledDeltaTime = Time.unscaledDeltaTime;
         }
 
         public void UpdateCurrentScene(SceneEntity scene)
