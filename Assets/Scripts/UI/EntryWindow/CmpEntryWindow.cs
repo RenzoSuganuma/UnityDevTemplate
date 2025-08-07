@@ -1,8 +1,8 @@
 using ImTipsyDude.Helper;
-using ImTipsyDude.InstantECS;
+using ImTipsyDude.InstantCS;
 using TMPro;
 
-public class CmpEntryWindow : IECSComponent
+public class CmpEntryWindow : ICSComponent
 {
     private TMP_Text[] _texts;
 

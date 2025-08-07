@@ -1,10 +1,7 @@
-namespace ImTipsyDude
+public enum ExecutionOrder : int
 {
-    public enum ExecutionOrder : int
-    {
-        UnityComponent = 0,
-        Scene = 1,
-        EntityOrComponent = 2,
-        System = 3,
-    }
+    UnityComponent = 0,
+    Scene,
+    Component,
+    System,
 }

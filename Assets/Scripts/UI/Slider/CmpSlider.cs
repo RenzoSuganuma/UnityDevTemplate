@@ -1,9 +1,9 @@
 using Cysharp.Threading.Tasks;
-using ImTipsyDude.InstantECS;
+using ImTipsyDude.InstantCS;
 using R3;
 using UnityEngine.UI;
 
-public class CmpSlider : IECSComponent
+public class CmpSlider : ICSComponent
 {
     public ReactiveProperty<float> SliderValue { get; private set; } = new();
 

@@ -1,6 +1,6 @@
-using ImTipsyDude.InstantECS;
+using ImTipsyDude.InstantCS;
 
-public class SysSlider : IECSSystem
+public class SysSlider : ICSSystem
 {
     private CmpSlider _cmpSlider;
 
@@ -12,17 +12,5 @@ public class SysSlider : IECSSystem
     public override void OnStart()
     {
         _cmpSlider = GetComponent<CmpSlider>();
-    }
-
-    public override void OnUpdate()
-    {
-    }
-
-    public override void OnFixedUpdate()
-    {
-    }
-
-    public override void OnTerminate()
-    {
     }
 }

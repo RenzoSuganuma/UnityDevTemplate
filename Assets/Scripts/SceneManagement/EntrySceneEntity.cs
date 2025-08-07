@@ -1,4 +1,4 @@
-using ImTipsyDude.InstantECS;
+using ImTipsyDude.InstantCS;
 using R3;
 using UnityEngine;
 
@@ -8,15 +8,7 @@ namespace ImTipsyDude.Scene
     {
         public override void OnStart()
         {
-            IECSWorld.Instance.StartLoadNextScene("Level1");
-        }
-
-        public override void OnUpdate()
-        {
-        }
-
-        public override void OnFixedUpdate()
-        {
+            ICSWorld.Instance.StartLoadNextScene("Level1");
         }
 
         public override void OnTerminate()

@@ -1,12 +1,12 @@
 using System;
 using System.Collections;
 using DG.Tweening;
-using ImTipsyDude.InstantECS;
+using ImTipsyDude.InstantCS;
 using UnityEngine;
 
 namespace ImTipsyDude
 {
-    public class SysFadePanel : IECSSystem
+    public class SysFadePanel : ICSSystem
     {
         private CanvasGroup _canvasGroup;
 
@@ -16,18 +16,6 @@ namespace ImTipsyDude
             {
                 _canvasGroup = gameObject.AddComponent<CanvasGroup>();
             }
-        }
-
-        public override void OnUpdate()
-        {
-        }
-
-        public override void OnFixedUpdate()
-        {
-        }
-
-        public override void OnTerminate()
-        {
         }
 
         public void Show(float duration = 1.0f)

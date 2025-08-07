@@ -1,4 +1,4 @@
-using ImTipsyDude.InstantECS;
+using ImTipsyDude.InstantCS;
 
 namespace ImTipsyDude.Scene
 {
@@ -6,15 +6,7 @@ namespace ImTipsyDude.Scene
     {
         public override void OnStart()
         {
-            IECSWorld.Instance.StartLoadNextScene("Entry");
-        }
-
-        public override void OnUpdate()
-        {
-        }
-
-        public override void OnFixedUpdate()
-        {
+            ICSWorld.Instance.StartLoadNextScene("Entry");
         }
 
         public override void OnTerminate()
