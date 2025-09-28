@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using MyCompany.MyProj.Infra;
 using UnityEngine;
 using VContainer;
 using Application = MyCompany.MyProj.Infra.Application;
@@ -16,6 +17,11 @@ namespace MyCompany.MyProj.GameState
         {
             await UniTask.Yield();
             RunNextState<GameTitleState>();
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
         }
     }
 }

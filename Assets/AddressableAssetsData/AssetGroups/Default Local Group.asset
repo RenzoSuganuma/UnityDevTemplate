@@ -20,6 +20,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ad007d568e35f448ea00dece83c5adec
+    m_Address: Assets/Prefabs/LoadingPanel.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 350ecd08cd68b4d0e9aebe868d4f0f16, type: 2}
   m_SchemaSet:
