@@ -394,7 +394,7 @@ GameObject:
   - component: {fileID: 1632643340}
   - component: {fileID: 1632643339}
   m_Layer: 0
-  m_Name: AppInfra
+  m_Name: Application
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

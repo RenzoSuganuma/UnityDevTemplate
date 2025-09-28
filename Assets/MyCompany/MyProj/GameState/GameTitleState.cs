@@ -1,7 +1,5 @@
 using System.Linq;
 using Cysharp.Threading.Tasks;
-using MyCompany.MyProj.Settings;
-using UnityEditor.AddressableAssets.Settings;
 using UnityEngine.SceneManagement;
 using VContainer;
 using Application = MyCompany.MyProj.Infra.Application;
