@@ -8,12 +8,9 @@ namespace MyCompany.MyProj.GameState
 {
     public class GameTitleState : AppStateBase
     {
-        private readonly Application _application;
-
         [Inject]
         public GameTitleState(Application lifetime) : base(lifetime)
         {
-            _application = lifetime;
         }
 
         public override async UniTask InitAsync()
