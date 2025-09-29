@@ -23,9 +23,8 @@ namespace MyCompany.MyProj.Editor
             _targetGroup =
                 (AddressableAssetGroup)EditorGUILayout.ObjectField(_targetGroup, typeof(AddressableAssetGroup), false);
             _saveFolder = EditorGUILayout.TextField("SavePath", _saveFolder);
-            var path = _saveFolder + $"/AAG{_targetGroup.name.Replace(" ", "")}.cs";
-
             if (_targetGroup == null) return;
+            var path = _saveFolder + $"/AAG{_targetGroup.name.Replace(" ", "")}.cs";
 
             if (GUILayout.Button("Generate"))
             {
