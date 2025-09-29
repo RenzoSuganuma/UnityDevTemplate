@@ -2,15 +2,15 @@ public class UtilEngineLayer
 
 {
 
-public const string k_Default = "Default";
+public const string kDefault = "Default";
 
-public const string k_TransparentFX = "TransparentFX";
+public const string kTransparentFX = "TransparentFX";
 
-public const string k_IgnoreRaycast = "Ignore Raycast";
+public const string kIgnoreRaycast = "Ignore Raycast";
 
-public const string k_Water = "Water";
+public const string kWater = "Water";
 
-public const string k_UI = "UI";
+public const string kUI = "UI";
 
 }
 

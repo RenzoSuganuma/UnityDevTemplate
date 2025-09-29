@@ -30,23 +30,11 @@ namespace MyCompany.MyProj.Editor
             {
                 var fs = File.Open(path, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite);
                 List<string> content = new List<string>();
-                content.Add($"public class AAG{_targetGroup.name.Replace(" ", "")}" + "{\n");
+                content.Add($"public class AAG{_targetGroup.name.Replace(" ", "")}" + "\n{\n");
                 foreach (var obj in _targetGroup.entries)
                 {
-                    if (obj.IsFolder)
-                    {
-                        foreach (var file in Directory.GetFiles(obj.AssetPath))
-                        {
-                            var l = $"public const string k_{file.Split('.')[0].Replace("/", "_")} = \"{file}\";\n";
-                            if (!file.EndsWith(".meta"))
-                                content.Add(l);
-                        }
-
-                        continue;
-                    }
-
                     var line =
-                        $"public const string k_{obj.AssetPath.Split('.')[0].Replace("/", "_")} = \"{obj.AssetPath}\";\n";
+                        $"public const string k{obj.AssetPath.Split('.')[0].Replace("/", "_")} = \"{obj.AssetPath}\";\n";
                     content.Add(line);
                 }
 

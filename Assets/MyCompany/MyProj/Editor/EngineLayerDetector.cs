@@ -7,6 +7,7 @@ namespace MyCompany.MyProj.Editor
 {
     public class EngineLayerDetector
     {
+        [InitializeOnLoadMethod]
         [MenuItem("MyCompany/MyProj/DetectEngineLayers")]
         public static void Init()
         {
@@ -22,7 +23,7 @@ namespace MyCompany.MyProj.Editor
 
             foreach (var l in UnityEditorInternal.InternalEditorUtility.layers)
             {
-                content.Add($"public const string k_{l.Replace(" ", "")} = \"{l}\";\n");
+                content.Add($"public const string k{l.Replace(" ", "")} = \"{l}\";\n");
             }
 
             content.Add("}\n");

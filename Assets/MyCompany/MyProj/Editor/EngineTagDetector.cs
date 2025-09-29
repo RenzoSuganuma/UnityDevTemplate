@@ -7,6 +7,7 @@ namespace MyCompany.MyProj.Editor
 {
     public class EngineTagDetector
     {
+        [InitializeOnLoadMethod]
         [MenuItem("MyCompany/MyProj/DetectEngineTags")]
         public static void Init()
         {
@@ -22,7 +23,7 @@ namespace MyCompany.MyProj.Editor
 
             foreach (var tag in UnityEditorInternal.InternalEditorUtility.tags)
             {
-                content.Add($"public const string k_{tag.Replace(" ", "")} = \"{tag}\";\n");
+                content.Add($"public const string k{tag.Replace(" ", "")} = \"{tag}\";\n");
             }
 
             content.Add("}\n");

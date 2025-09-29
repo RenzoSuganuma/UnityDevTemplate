@@ -2,19 +2,19 @@ public class UtilEngineTag
 
 {
 
-public const string k_Untagged = "Untagged";
+public const string kUntagged = "Untagged";
 
-public const string k_Respawn = "Respawn";
+public const string kRespawn = "Respawn";
 
-public const string k_Finish = "Finish";
+public const string kFinish = "Finish";
 
-public const string k_EditorOnly = "EditorOnly";
+public const string kEditorOnly = "EditorOnly";
 
-public const string k_MainCamera = "MainCamera";
+public const string kMainCamera = "MainCamera";
 
-public const string k_Player = "Player";
+public const string kPlayer = "Player";
 
-public const string k_GameController = "GameController";
+public const string kGameController = "GameController";
 
 }
 
