@@ -1,5 +1,8 @@
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using MyCompany.MyProj.GameState;
+using UnityEngine;
+using UnityEngine.UI;
 using VContainer;
 using VContainer.Unity;
 
@@ -7,6 +10,8 @@ namespace MyCompany.MyProj.Infra
 {
     public sealed class Application : LifetimeScope
     {
+        [SerializeField] private Image _loadingImage;
+
         private ContainerBuilder _container;
         private IObjectResolver _resolver;
 
@@ -28,6 +33,8 @@ namespace MyCompany.MyProj.Infra
             _resolver = _container.Build();
             _currentState = _resolver.Resolve<AppBootState>();
             _currentState.InitAsync().Forget();
+
+            _loadingImage.DOFade(0, .5f);
         }
 
         protected override void OnDestroy()
@@ -48,6 +55,16 @@ namespace MyCompany.MyProj.Infra
             _currentState?.Dispose();
             _currentState = next;
             _currentState.InitAsync().Forget();
+        }
+
+        public void ShowLoadingScreen()
+        {
+            _loadingImage.DOFade(1, 1f);
+        }
+
+        public void HideLoadingScreen()
+        {
+            _loadingImage.DOFade(0, 1f);
         }
     }
 }

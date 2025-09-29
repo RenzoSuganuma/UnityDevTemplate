@@ -15,6 +15,7 @@ namespace MyCompany.MyProj.GameState
 
         public override async UniTask InitAsync()
         {
+            ShowLoadingScreen();
             await UniTask.Yield();
             RunNextState<GameTitleState>();
         }

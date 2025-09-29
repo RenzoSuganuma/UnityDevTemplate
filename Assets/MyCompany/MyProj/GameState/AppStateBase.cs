@@ -30,5 +30,15 @@ namespace MyCompany.MyProj.GameState
         {
             _lifetime?.RunNextState<T>();
         }
+        
+        public void ShowLoadingScreen()
+        {
+            _lifetime?.ShowLoadingScreen();
+        }
+        
+        public void HideLoadingScreen()
+        {
+            _lifetime?.HideLoadingScreen();
+        }
     }
 }

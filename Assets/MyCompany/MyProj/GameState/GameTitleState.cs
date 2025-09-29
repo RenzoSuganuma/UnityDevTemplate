@@ -16,6 +16,7 @@ namespace MyCompany.MyProj.GameState
         public override async UniTask InitAsync()
         {
             await SceneManager.LoadSceneAsync("Scenes/Title", LoadSceneMode.Single).ToUniTask();
+            HideLoadingScreen();
         }
     }
 }
