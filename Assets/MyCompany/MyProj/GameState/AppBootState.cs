@@ -17,7 +17,7 @@ namespace MyCompany.MyProj.GameState
         {
             ShowLoadingScreen();
             await UniTask.Yield();
-            //RunNextState<GameTitleState>();
+            RunNextState<GameTitleState>();
         }
 
         public override void Dispose()

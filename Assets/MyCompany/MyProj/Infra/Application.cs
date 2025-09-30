@@ -32,7 +32,6 @@ namespace MyCompany.MyProj.Infra
             _container.RegisterInstance(this);
             if (Gamepad.current != null)
             {
-                Debug.Log($"Gamepad {Gamepad.current.displayName}");
                 _container.RegisterInstance(Gamepad.current);
                 Gamepad.current.SetMotorSpeeds(10,0);
             }
@@ -51,7 +50,6 @@ namespace MyCompany.MyProj.Infra
         {
             base.OnDestroy();
             _resolver.Dispose();
-            Gamepad.current.SetMotorSpeeds(0,0);
         }
 
         public void RunNextState<T>() where T : AppStateBase

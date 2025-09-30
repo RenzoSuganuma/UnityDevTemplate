@@ -31,7 +31,6 @@ namespace MyCompany.MyProj.Infra.TimeLineEx.Haptics
                 switch (_operatingMode)
                 {
                     case HapticsOperatingMode.Vibrate:
-                        Debug.Log("unnko");
                         Gamepad.current.SetMotorSpeeds(_lowFrequency, _highFrequency);
                         break;
                     case HapticsOperatingMode.Resume:
