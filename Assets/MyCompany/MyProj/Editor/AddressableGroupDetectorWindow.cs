@@ -15,7 +15,7 @@ namespace MyCompany.MyProj.Editor
         [MenuItem("MyCompany/MyProj/AddressableGroupDetectorWindow")]
         public static void Init()
         {
-            CreateWindow<AddressableGroupDetectorWindow>();
+            CreateWindow<AddressableGroupDetectorWindow>().Show();
         }
 
         private void OnGUI()
