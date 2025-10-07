@@ -1,5 +1,4 @@
 using MyCompany.MyProj.GameState;
-using TestModules;
 using VContainer;
 using VContainer.Unity;
 
@@ -16,7 +15,7 @@ namespace MyCompany.MyProj.LifeTimeScopeClass
         protected override void Awake()
         {
             base.Awake(); // 先に↑のConfigureでコンテナを構築してから解決処理を実行
-            Container.Resolve<BootState>().Initialize();
+            Container.Resolve<BootState>().OnStateInitialize();
         }
     }
 }

@@ -6,20 +6,23 @@ namespace MyCompany.MyProj.GameState
     public class GameStateBase : IGameState
     {
         private GameStateBase _currentState;
-        private IObjectResolver Owner;
-        protected LifetimeScope LifeTime;
+        private readonly LifetimeScope _lifetimeScope;
 
         [Inject]
-        public GameStateBase(IObjectResolver parentScope)
+        public GameStateBase(LifetimeScope parentScope)
         {
-            Owner = parentScope;
+            _lifetimeScope = parentScope.CreateChild(CreateBuilder);
         }
 
         protected virtual void CreateBuilder(IContainerBuilder builder)
         {
         }
 
-        public virtual void Initialize()
+        public virtual void OnStateInitialize()
+        {
+        }
+
+        public virtual void OnStateFinalize()
         {
         }
 
@@ -29,9 +32,9 @@ namespace MyCompany.MyProj.GameState
 
         protected void RunNextState<T>() where T : GameStateBase
         {
-            _currentState?.Dispose();
-            _currentState = LifeTime.Container.Resolve<T>();
-            _currentState.Initialize();
+            OnStateFinalize();
+            _currentState = _lifetimeScope.Container.Resolve<T>();
+            _currentState.OnStateInitialize();
         }
     }
 }
