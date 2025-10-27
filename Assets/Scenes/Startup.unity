@@ -424,13 +424,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1203746591}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecbbbe04776e4e6aa3e2860a96fc6a20, type: 3}
+  m_Script: {fileID: 11500000, guid: d36300dc7a314afcbed594394855afb0, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MyCompany.MyProj.LifeTimeScope.RootLifeTimeScope
+  m_EditorClassIdentifier: Assembly-CSharp::MyCompany.MyProj.RuntimeContainer.RuntimeContainerBase
   parentReference:
     TypeName: 
   autoRun: 1
   autoInjectGameObjects: []
+  _registerComponents: []
 --- !u!1 &1399316806
 GameObject:
   m_ObjectHideFlags: 0
