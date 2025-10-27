@@ -1,4 +1,3 @@
-using MyCompany.MyProj.GameState;
 using VContainer;
 using VContainer.Unity;
 
@@ -8,14 +7,12 @@ namespace MyCompany.MyProj.LifeTimeScopeClass
     {
         protected override void Configure(IContainerBuilder builder)
         {
-            builder.Register<BootState>(Lifetime.Singleton);
             base.Configure(builder); // ここで基底の関数をコールしてコンテナを構築
         }
 
         protected override void Awake()
         {
             base.Awake(); // 先に↑のConfigureでコンテナを構築してから解決処理を実行
-            Container.Resolve<BootState>().OnStateInitialize();
         }
     }
 }
